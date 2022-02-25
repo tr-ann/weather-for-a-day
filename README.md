@@ -11,8 +11,8 @@ Simple NestJS Application that takes latitude and longitude and date, and return
 ```bash
 $ npm install
 ```
-
-Add API_KEY .env variable from [source api](https://home.openweathermap.org/api_keys)
+You should add API key from [source api](https://home.openweathermap.org/api_keys) to .env file:
+`API_KEY={your-api-key}`
 
 ## Running the app
 
