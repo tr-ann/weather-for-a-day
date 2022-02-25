@@ -1,6 +1,5 @@
-import { BadRequestException, Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { lastValueFrom } from 'rxjs';
-import { getDateDifference } from '../helpers/getDateDifference';
 import { GetWeather } from './get-weather.model';
 import { WeatherService } from './weather.service';
 
@@ -10,18 +9,7 @@ export class WeatherController {
 
   @Get()
   public async getWeather(@Query() query: GetWeather) {
-    if (!query.latitude || !query.longitude) {
-      throw new BadRequestException(
-        'The latitude and longitude must be defined',
-      );
-    }
-
     const weatherDate = query.date ? new Date(query.date) : new Date();
-    const currentDate = new Date();
-
-    if (getDateDifference(currentDate, weatherDate) > 7) {
-      throw new BadRequestException('The date must be within the next 7 days');
-    }
 
     const description = await lastValueFrom(
       this.weatherService.getWeather(
