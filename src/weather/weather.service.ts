@@ -1,6 +1,6 @@
 import { HttpService, Injectable } from '@nestjs/common';
 import { map } from 'rxjs';
-import { configureApiUrl } from '../helpers/getConfiguredApiUrl';
+import { configureApiUrl } from '../helpers/configureApiUrl';
 import { getDateDifference } from '../helpers/getDateDifference';
 
 @Injectable()
