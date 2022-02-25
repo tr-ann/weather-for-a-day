@@ -1,4 +1,5 @@
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
+
 /**
  * Get difference between dates in days
  * @returns number

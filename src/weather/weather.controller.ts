@@ -16,7 +16,7 @@ export class WeatherController {
       );
     }
 
-    const weatherDate = new Date(query.date);
+    const weatherDate = query.date ? new Date(query.date) : new Date();
     const currentDate = new Date();
 
     if (getDateDifference(currentDate, weatherDate) > 7) {
