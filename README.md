@@ -3,7 +3,8 @@
 Simple NestJS Application that takes latitude and longitude and date, and returns the weather description for that location for a given date.
 
 - used REST for API
-- has simple validation
+- app has simple validation
+- app has tests
 
 ## Installation
 
